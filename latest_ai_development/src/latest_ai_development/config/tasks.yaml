@@ -15,3 +15,14 @@ reporting_task:
     A fully fledge reports with the mains topics, each with a full section of information.
     Formatted as markdown without '```'
   agent: reporting_analyst
+
+report_summarizer_task:
+    description: >
+      Summarize the report into a summary
+    expected_output: >
+      A short summary of the report
+    agent: report_summarizer
+    context:
+      - reporting_task
+      - research_task
+

@@ -72,3 +72,16 @@ class LatestAiDevelopment():
 	def after_kickoff_function(self, result):
 		print(f"After kickoff function with result: {result}")
 		return result # You can return the result or modify it as needed
+
+	@agent
+	def report_summarizer(self) -> Agent:
+		return Agent(
+			config=self.agents_config["report_summarizer"],
+		)
+  
+	@task
+	def report_summarizer_task(self) -> Task:
+		return Task(
+			config=self.tasks_config["report_summarizer_task"],
+			output_file='summary.md'
+		)
